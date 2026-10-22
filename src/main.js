@@ -1,3 +1,4 @@
+import { fitViewport } from "./viewport.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Experiment, DT, legIK } from "./physics.js";
@@ -245,9 +246,7 @@ function tick(now) {
   renderer.render(scene, camera);
 }
 requestAnimationFrame(tick);
-addEventListener("resize", () => {
-  renderer.setSize(innerWidth, innerHeight);
-  camera.aspect = innerWidth / innerHeight;
-  camera.updateProjectionMatrix();
-});
-renderer.setSize(innerWidth, innerHeight);
+const resize = () => fitViewport(renderer, camera);
+addEventListener("resize", resize);
+window.visualViewport?.addEventListener("resize", resize);
+resize();

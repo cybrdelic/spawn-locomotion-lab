@@ -29,6 +29,23 @@ npm run build
 
 The mechanical tests write results under the ignored `evidence/` directory. Build output is in `dist/`.
 
+### Desktop and mobile browsers
+
+The procedural baseline uses the same Node/Vite commands on Windows, Linux and macOS. It needs WebAssembly and WebGL 2 in a current browser. Unsupported capabilities and startup/context failures show an explicit message instead of leaving active controls over an empty canvas. Touch layouts keep a physical viewport above a scrollable controls panel; every push and reset has a button.
+
+To check the built pages with Chromium:
+
+```sh
+npx playwright install chromium
+npm run build
+npm run test:browser
+```
+
+The browser check serves the production build over loopback, exercises desktop, phone-sized and landscape viewports, follows the planar/3D link, tests push/reset controls and checks unavailable-capability messages. It writes screenshots and a JSON report under `evidence/browser/`. These are desktop-browser viewport checks, not qualification on physical phones or all GPU drivers.
+
+The GitHub Actions workflow runs the mechanical suites, build and browser checks on Windows, Linux and macOS. A workflow definition is not a passing CI result; check the actual run before claiming those platforms have passed. See [recorded browser evidence and limits](docs/BROWSER_COMPATIBILITY.md).
+
+
 ## MuJoCo runtime: additional inputs required
 
 The `unified_runtime/` source is the recent 216-input / 28-output physical feedback candidate. It is supplied for inspection and continuation. It cannot reproduce the original avatar experiment from this repository alone.

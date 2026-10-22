@@ -169,3 +169,21 @@ footer p {
   footer span { margin-right: 9px; }
   footer p { display: none; }
 }
+
+/* Reach every control on short screens without hiding the physical viewport. */
+aside { max-height: calc(100dvh - 76px); overflow-y: auto; overscroll-behavior: contain; }
+canvas { touch-action: none; }
+.runtime-status { pointer-events: auto; position: absolute; z-index: 5; left: 24px; top: 38%; max-width: min(540px, calc(100vw - 48px)); padding: 20px; background: #15232df5; border: 1px solid #91d8c0; border-radius: 12px; line-height: 1.6; }
+.runtime-status[hidden] { display: none; }
+.runtime-unavailable canvas { visibility: hidden; }
+button:disabled, select:disabled, input:disabled { opacity: .45; cursor: not-allowed; }
+@media (min-width: 801px) { header { max-width: min(610px, calc(100vw - 365px)); } }
+@media (min-width: 601px) and (max-width: 800px) { aside { max-height: calc(100dvh - 156px); } }
+@media (max-width: 600px) {
+  aside { max-height: 36dvh; bottom: calc(31px + env(safe-area-inset-bottom)); }
+  aside select { font-size: 16px; min-height: 44px; }
+  aside button { min-height: 44px; }
+  aside input { min-height: 28px; }
+  footer { bottom: calc(9px + env(safe-area-inset-bottom)); }
+  .runtime-status { top: 26%; left: 16px; max-width: calc(100vw - 32px); padding: 16px; font-size: 14px; }
+}
