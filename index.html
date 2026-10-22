@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Physical animation / Contact Lab</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="tag">RESEARCH EXPERIMENT · 01</span>
+        <h1>Intent meets contact.</h1>
+        <p>One animation. A different physical answer.</p>
+        <p><a href="/3d.html" style="color:#9bdcc5;pointer-events:auto">Open the full 3D continuation →</a></p>
+      </header>
+      <aside>
+        <label
+          >CONTROLLER<select id="mode">
+            <option value="adaptive">Contact-adapted target</option>
+            <option value="fixed">Fixed animation target</option>
+            <option value="passive">Passive ragdoll</option>
+          </select></label
+        ><label
+          >REFERENCE MOTION<select id="motion">
+            <option value="squat">Squat & weight transfer</option>
+            <option value="stand">Quiet stance</option>
+            <option value="reach">Reach & balance response</option>
+          </select></label
+        ><label
+          >RIGHT SUPPORT HEIGHT <output id="heightValue">0 cm</output
+          ><input
+            id="height"
+            type="range"
+            min="0"
+            max="0.24"
+            step="0.02"
+            value="0" /></label
+        ><label
+          >LEG SEGMENT LENGTH <output id="lengthValue">44 cm</output
+          ><input
+            id="length"
+            type="range"
+            min="0.38"
+            max="0.5"
+            step="0.02"
+            value="0.44" /></label
+        ><button id="push">Push torso <kbd>SPACE</kbd></button
+        ><button id="reset">Reset experiment <kbd>R</kbd></button>
+        <div class="readout" id="stats"></div>
+        <p class="fine">
+          3D mannequin · planar rigid-body dynamics<br />Free root. Joint
+          motors. Coulomb contact.<br />No root pinning or animation
+          teleporting.
+        </p>
+      </aside>
+      <footer>
+        <span><i class="blue"></i> Simulated body</span
+        ><span><i class="ghost"></i> Unmodified reference</span
+        ><span><i class="green"></i> Adapted target</span>
+        <p>
+          Drag to orbit · wheel to zoom · joints light up near angular limits
+        </p>
+      </footer>
+    </main>
+    <canvas id="scene"></canvas>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

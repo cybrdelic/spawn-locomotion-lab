@@ -1,0 +1,28 @@
+{
+  "name": "physical-animation-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node verify.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test:3d": "node verify3d.mjs",
+    "test:all": "node verify.mjs && node verify3d.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Isolated contact-aware physical animation experiment",
+  "dependencies": {
+    "@dimforge/rapier2d-compat": "0.21.0",
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "@playwright/cli": "0.1.22",
+    "playwright": "1.64.1",
+    "three": "0.186.1",
+    "vite": "8.3.4"
+  },
+  "type": "module",
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}

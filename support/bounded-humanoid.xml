@@ -1,0 +1,145 @@
+<mujoco model="bounded-source-humanoid">
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.002" gravity="-0 -0 -9.8100004196166992" integrator="implicitfast" cone="pyramidal" />
+  <worldbody>
+    <geom name="geom_0" type="plane" pos="0 0 0" quat="1 0 0 0" size="5 5 5" friction="1 0.004999999888241291 9.9999997473787516e-05" condim="3" contype="2" conaffinity="2147483645" margin="0.0" gap="0.0" solref="0.019999999552965164 1" solimp="0.89999997615814209 0.94999998807907104 0.0010000000474974513 0.5 2" priority="0" solmix="1.0" />
+    <body name="pelvis" pos="0 0 0" quat="1 0 0 0">
+      <inertial mass="9.995594024658203" pos="0 0 0.11319494992494583" quat="1 0 0 0" diaginertia="0.067929685115814209 0.067929685115814209 0.028292007744312286" />
+      <freejoint name="root" />
+      <geom name="geom_1" type="sphere" pos="0 0 0.070000000298023224" quat="1 0 0 0" size="0.090000003576278687 0.090000003576278687 0.090000003576278687" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="4" conaffinity="2147483643" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+      <geom name="geom_2" type="sphere" pos="0 0 0.20499999821186066" quat="1 0 0 0" size="0.070000000298023224 0.070000000298023224 0.070000000298023224" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="4" conaffinity="2147483643" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+      <body name="torso" pos="0 0 0.23615099489688873" quat="1 0 0 0">
+        <inertial mass="12.013508796691895" pos="-0.0028192827012389898 0 0.14793847501277924" quat="0.99868646437196795 0 -0.051238129163914202 0" diaginertia="0.10187180364482368 0.075570225715637207 0.072960965093446087" />
+        <joint name="abdomen_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-1.0471975511965976 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="abdomen_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-1.2217304763960306 1.2217304763960306" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="abdomen_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-1.0471975511965976 1.5707963267948966" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <geom name="geom_3" type="sphere" pos="0 0 0.11999999731779099" quat="1 0 0 0" size="0.10999999940395355 0.10999999940395355 0.10999999940395355" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="8" conaffinity="2147483639" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        <geom name="geom_4" type="capsule" pos="-0.011423749849200249 -0.086977250874042511 0.23320683836936951" quat="0.66874238958046162 -0.7371631009209747 0.096820344033612019 0" size="0.045000001788139343 0.041787091642618179 0.045000001788139343" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="8" conaffinity="2147483639" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        <geom name="geom_5" type="capsule" pos="-0.011423749849200249 0.086977250874042511 0.23320683836936951" quat="0.66874238958046162 0.7371631009209747 0.096820344033612019 -0" size="0.045000001788139343 0.041787091642618179 0.045000001788139343" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="8" conaffinity="2147483639" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        <body name="head" pos="0 0 0.22389398515224457" quat="1 0 0 0">
+          <inertial mass="3.8822643756866455" pos="0 0 0.17499999701976776" quat="1 0 0 0" diaginertia="0.014014974236488342 0.014014974236488342 0.014014974236488342" />
+          <joint name="neck_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-0.87266462599716477 0.87266462599716477" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="neck_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-0.78539816339744828 0.78539816339744828" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="neck_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-0.69813170079773179 1.0471975511965976" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <geom name="geom_6" type="sphere" pos="0 0 0.17499999701976776" quat="1 0 0 0" size="0.094999998807907104 0.094999998807907104 0.094999998807907104" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="8" conaffinity="2147483639" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        </body>
+        <body name="right_upper_arm" pos="-0.024049999192357063 -0.18310999870300293 0.24349997937679291" quat="1 0 0 0">
+          <inertial mass="1.624275803565979" pos="0 -0.12999999523162842 0" quat="0.70710678118654802 0.70710678118654802 0 0" diaginertia="0.010114342905580997 0.010114342905580997 0.0015686755068600178" />
+          <joint name="right_shoulder_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-1.9198621771937625 2.4434609527920612" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="right_shoulder_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-1.0471975511965976 2.7925268031909272" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="right_shoulder_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-1.5707963267948966 1.5707963267948966" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <geom name="geom_7" type="capsule" pos="0 -0.12999999523162842 0" quat="0.70710678118654746 -0.70710678118654746 0 0" size="0.045000001788139343 0.10000000149011612 0.045000001788139343" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="16" conaffinity="2147483631" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          <body name="right_lower_arm" pos="0 -0.27478799223899841 0" quat="1 0 0 0">
+            <inertial mass="1.0925705432891846" pos="0 -0.11124999821186066 0" quat="0.70710678118654802 0.70710678118654802 0 0" diaginertia="0.0043672635219991207 0.0043672635219991207 0.00082876102533191442" />
+            <joint name="right_elbow" type="hinge" axis="0 0 1" pos="0 0 0" range="0 2.7925268031909272" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <geom name="geom_8" type="capsule" pos="0 -0.11124999821186066 0" quat="0.70710678118654746 -0.70710678118654746 0 0" size="0.039999999105930328 0.076250001788139343 0.039999999105930328" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="16" conaffinity="2147483631" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+            <body name="right_hand" pos="0 -0.25894704461097717 0" quat="1 0 0 0">
+              <inertial mass="0.49997395277023315" pos="0 0 0" quat="1 0 0 0" diaginertia="0.00031998331542126834 0.00031998331542126834 0.00031998331542126834" />
+              <geom name="geom_9" type="sphere" pos="0 0 0" quat="1 0 0 0" size="0.039999999105930328 0.039999999105930328 0.039999999105930328" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="32" conaffinity="2147483615" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+            </body>
+          </body>
+        </body>
+        <body name="left_upper_arm" pos="-0.024049999192357063 0.18310999870300293 0.24349997937679291" quat="1 0 0 0">
+          <inertial mass="1.624275803565979" pos="0 0.12999999523162842 0" quat="0.70710678118654802 0.70710678118654802 0 0" diaginertia="0.010114342905580997 0.010114342905580997 0.0015686755068600178" />
+          <joint name="left_shoulder_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-2.4434609527920612 1.9198621771937625" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="left_shoulder_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-2.7925268031909272 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <joint name="left_shoulder_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-1.5707963267948966 1.5707963267948966" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <geom name="geom_10" type="capsule" pos="0 0.12999999523162842 0" quat="0.70710678118654746 0.70710678118654746 0 -0" size="0.045000001788139343 0.10000000149011612 0.045000001788139343" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="64" conaffinity="2147483583" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          <body name="left_lower_arm" pos="0 0.27478799223899841 0" quat="1 0 0 0">
+            <inertial mass="1.0925705432891846" pos="0 0.11124999821186066 0" quat="0.70710678118654802 0.70710678118654802 0 0" diaginertia="0.0043672635219991207 0.0043672635219991207 0.00082876102533191442" />
+            <joint name="left_elbow" type="hinge" axis="0 0 1" pos="0 0 0" range="-2.7925268031909272 0" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <geom name="geom_11" type="capsule" pos="0 0.11124999821186066 0" quat="0.70710678118654746 0.70710678118654746 0 -0" size="0.039999999105930328 0.076250001788139343 0.039999999105930328" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="64" conaffinity="2147483583" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+            <body name="left_hand" pos="0 0.25894704461097717 0" quat="1 0 0 0">
+              <inertial mass="0.49997395277023315" pos="0 0 0" quat="1 0 0 0" diaginertia="0.00031998331542126834 0.00031998331542126834 0.00031998331542126834" />
+              <geom name="geom_12" type="sphere" pos="0 0 0" quat="1 0 0 0" size="0.039999999105930328 0.039999999105930328 0.039999999105930328" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="128" conaffinity="2147483519" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_thigh" pos="0 -0.084886997938156128 0" quat="1 0 0 0">
+        <inertial mass="4.743486404418945" pos="0 0 -0.20000000298023224" quat="1 0 0 0" diaginertia="0.065396599471569061 0.065396599471569061 0.0069069983437657356" />
+        <joint name="right_hip_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-1.0471975511965976 0.52359877559829882" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="right_hip_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-1.0471975511965976 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="right_hip_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-2.4434609527920612 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <geom name="geom_13" type="capsule" pos="0 0 -0.20000000298023224" quat="1 0 0 0" size="0.054999999701976776 0.16000001132488251 0.054999999701976776" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="4" conaffinity="2147483643" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        <body name="right_shin" pos="0 0 -0.42154601216316223" quat="1 0 0 0">
+          <inertial mass="3.119208812713623" pos="0 0 -0.19249998033046722" quat="1 0 0 0" diaginertia="0.042186051607131958 0.042186051607131958 0.0037662787362933159" />
+          <joint name="right_knee" type="hinge" axis="0 1 0" pos="0 0 0" range="0 2.7925268031909272" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <geom name="geom_14" type="capsule" pos="0 0 -0.19249999523162842" quat="1 0 0 0" size="0.05000000074505806 0.16249999403953552 0.05000000074505806" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="256" conaffinity="2147483391" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          <body name="right_foot" pos="0 0 -0.40986999869346619" quat="1 0 0 0">
+            <inertial mass="0.9996871948242188" pos="0.045000001788139343 0 -0.022500000894069672" quat="1 0 0 0" diaginertia="0.0009267933783121407 0.0028619377408176661 0.0032847223337739706" />
+            <joint name="right_ankle_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-0.52359877559829882 0.52359877559829882" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <joint name="right_ankle_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-0.69813170079773179 0.69813170079773179" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <joint name="right_ankle_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-0.95993108859688125 0.95993108859688125" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <geom name="geom_15" type="box" pos="0.045000001788139343 0 -0.022500000894069672" quat="1 0 0 0" size="0.088500000536441803 0.045000001788139343 0.027499999850988388" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="256" conaffinity="2147483391" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          </body>
+        </body>
+      </body>
+      <body name="left_thigh" pos="0 0.084886997938156128 0" quat="1 0 0 0">
+        <inertial mass="4.743486404418945" pos="0 0 -0.20000000298023224" quat="1 0 0 0" diaginertia="0.065396599471569061 0.065396599471569061 0.0069069983437657356" />
+        <joint name="left_hip_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-0.52359877559829882 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="left_hip_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-1.0471975511965976 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <joint name="left_hip_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-2.4434609527920612 1.0471975511965976" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+        <geom name="geom_16" type="capsule" pos="0 0 -0.20000000298023224" quat="1 0 0 0" size="0.054999999701976776 0.16000001132488251 0.054999999701976776" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="1024" conaffinity="2147482623" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+        <body name="left_shin" pos="0 0 -0.42154601216316223" quat="1 0 0 0">
+          <inertial mass="3.119208812713623" pos="0 0 -0.19249998033046722" quat="1 0 0 0" diaginertia="0.042186051607131958 0.042186051607131958 0.0037662787362933159" />
+          <joint name="left_knee" type="hinge" axis="0 1 0" pos="0 0 0" range="0 2.7925268031909272" limited="true" armature="0.019999999552965164" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+          <geom name="geom_17" type="capsule" pos="0 0 -0.19249999523162842" quat="1 0 0 0" size="0.05000000074505806 0.16249999403953552 0.05000000074505806" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="512" conaffinity="2147483135" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          <body name="left_foot" pos="0 0 -0.40986999869346619" quat="1 0 0 0">
+            <inertial mass="0.9996871948242188" pos="0.045000001788139343 0 -0.022500000894069672" quat="1 0 0 0" diaginertia="0.0009267933783121407 0.0028619377408176661 0.0032847223337739706" />
+            <joint name="left_ankle_x" type="hinge" axis="1 0 0" pos="0 0 0" range="-0.52359877559829882 0.52359877559829882" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <joint name="left_ankle_z" type="hinge" axis="0 0 1" pos="0 0 0" range="-0.69813170079773179 0.69813170079773179" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <joint name="left_ankle_y" type="hinge" axis="0 1 0" pos="0 0 0" range="-0.95993108859688125 0.95993108859688125" limited="true" armature="0.009999999776482582" damping="0" solreflimit="0.004 1" solimplimit="0.95 0.99 0.001" />
+            <geom name="geom_18" type="box" pos="0.045000001788139343 0 -0.022500000894069672" quat="1 0 0 0" size="0.088500000536441803 0.045000001788139343 0.027499999850988388" friction="1 0.05000000074505806 0.05000000074505806" condim="1" contype="512" conaffinity="2147483135" margin="0.0" gap="0.0" solref="0.014999998733401299 1" solimp="0.89999997615814209 0.99000000953674316 0.0030000000260770321 0.5 2" priority="0" solmix="1.0" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="abdomen_x" joint="abdomen_x" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="abdomen_z" joint="abdomen_z" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="abdomen_y" joint="abdomen_y" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="neck_x" joint="neck_x" gear="1" forcelimited="true" forcerange="-50 50" />
+    <motor name="neck_z" joint="neck_z" gear="1" forcelimited="true" forcerange="-50 50" />
+    <motor name="neck_y" joint="neck_y" gear="1" forcelimited="true" forcerange="-50 50" />
+    <motor name="right_shoulder_x" joint="right_shoulder_x" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="right_shoulder_z" joint="right_shoulder_z" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="right_shoulder_y" joint="right_shoulder_y" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="right_elbow" joint="right_elbow" gear="1" forcelimited="true" forcerange="-70 70" />
+    <motor name="left_shoulder_x" joint="left_shoulder_x" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="left_shoulder_z" joint="left_shoulder_z" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="left_shoulder_y" joint="left_shoulder_y" gear="1" forcelimited="true" forcerange="-100 100" />
+    <motor name="left_elbow" joint="left_elbow" gear="1" forcelimited="true" forcerange="-70 70" />
+    <motor name="right_hip_x" joint="right_hip_x" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="right_hip_z" joint="right_hip_z" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="right_hip_y" joint="right_hip_y" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="right_knee" joint="right_knee" gear="1" forcelimited="true" forcerange="-150 150" />
+    <motor name="right_ankle_x" joint="right_ankle_x" gear="1" forcelimited="true" forcerange="-90 90" />
+    <motor name="right_ankle_z" joint="right_ankle_z" gear="1" forcelimited="true" forcerange="-90 90" />
+    <motor name="right_ankle_y" joint="right_ankle_y" gear="1" forcelimited="true" forcerange="-90 90" />
+    <motor name="left_hip_x" joint="left_hip_x" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="left_hip_z" joint="left_hip_z" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="left_hip_y" joint="left_hip_y" gear="1" forcelimited="true" forcerange="-200 200" />
+    <motor name="left_knee" joint="left_knee" gear="1" forcelimited="true" forcerange="-150 150" />
+    <motor name="left_ankle_x" joint="left_ankle_x" gear="1" forcelimited="true" forcerange="-90 90" />
+    <motor name="left_ankle_z" joint="left_ankle_z" gear="1" forcelimited="true" forcerange="-90 90" />
+    <motor name="left_ankle_y" joint="left_ankle_y" gear="1" forcelimited="true" forcerange="-90 90" />
+  </actuator>
+  <contact>
+    <exclude body1="pelvis" body2="torso" />
+    <exclude body1="pelvis" body2="right_thigh" />
+    <exclude body1="pelvis" body2="left_thigh" />
+    <exclude body1="torso" body2="head" />
+    <exclude body1="torso" body2="right_upper_arm" />
+    <exclude body1="torso" body2="left_upper_arm" />
+    <exclude body1="right_upper_arm" body2="right_lower_arm" />
+    <exclude body1="right_lower_arm" body2="right_hand" />
+    <exclude body1="left_upper_arm" body2="left_lower_arm" />
+    <exclude body1="left_lower_arm" body2="left_hand" />
+    <exclude body1="right_thigh" body2="right_shin" />
+    <exclude body1="right_shin" body2="right_foot" />
+    <exclude body1="left_thigh" body2="left_shin" />
+    <exclude body1="left_shin" body2="left_foot" />
+  </contact>
+</mujoco>

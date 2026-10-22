@@ -1,0 +1,6 @@
+mujoco==3.5.0
+numpy==2.2.6
+scipy==1.17.1
+numba==0.65.1
+torch==2.6.0
+gymnasium==1.4.0

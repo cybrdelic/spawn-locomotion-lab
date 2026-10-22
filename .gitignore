@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+*.log
+evidence/
+.env
+.env.*
+!.env.example
+public/cybr-combat.glb
+public/combat-rig.json
+public/physical-contact-rig.json
+public/basis/
+*.pt
+*.pkl
+*.npz
