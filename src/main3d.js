@@ -1,3 +1,4 @@
+import { fitViewport } from "./viewport.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
@@ -218,16 +219,13 @@ requestAnimationFrame(tick);
 let mobileLayout;
 function resize() {
   const mobile = innerWidth <= 600;
-  const height = mobile ? Math.round(innerHeight * 0.49) : innerHeight;
   if (mobile !== mobileLayout) {
     camera.position.set(...(mobile ? [4.3, 2.0, 2.1] : [6.5, 2.8, 3.2]));
     orbit.target.set(mobile ? 0 : -0.45, mobile ? 0.9 : 1, 0);
     mobileLayout = mobile;
   }
-  renderer.domElement.style.top = mobile ? '110px' : '0';
-  renderer.setSize(innerWidth, height);
-  camera.aspect = innerWidth / height;
-  camera.updateProjectionMatrix();
+  fitViewport(renderer, camera);
 }
 addEventListener("resize", resize);
+window.visualViewport?.addEventListener("resize", resize);
 resize();
